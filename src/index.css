@@ -56,10 +56,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-dark);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: var(--color-dark);
 }
 
 #root {
   min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
 }

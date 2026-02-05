@@ -1,4 +1,9 @@
 export type { ColorKey, ColorShade } from "../constants/colors";
+export type {
+  ServiceItem,
+  ContactInfo,
+  SectionProps,
+} from "./sections";
 
 export interface ApiResponse<T> {
   data?: T;
