@@ -3,7 +3,7 @@ import { NavigationBar } from "./NavigationBar";
 
 export function MainLayout() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-white">
       <NavigationBar />
       <div className="h-16" />
       <main>
