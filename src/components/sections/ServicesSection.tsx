@@ -45,21 +45,30 @@ export function ServicesSection({
   return (
     <section
       id={id}
-      className={`py-20 bg-gradient-to-b from-gray-50 to-white ${className}`}
+      className={`py-32 bg-white ${className}`}
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(244,232,193,0.15) 50%, rgba(230,242,255,0.15) 100%)",
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
+            <h2
+              className="text-4xl md:text-6xl font-light text-dark/80 mb-6"
+              style={{
+                fontFamily: "Inter, Poppins, sans-serif",
+                letterSpacing: "0.05em",
+              }}
+            >
               {title}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-gold to-gold-300 mx-auto"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -70,18 +79,25 @@ export function ServicesSection({
                   key={service.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-100"
+                  className="text-center"
                 >
-                  <div className="w-12 h-12 bg-gold-50 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-gold" />
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-gold/70" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-dark mb-2">
+                  <h3
+                    className="text-xl md:text-2xl font-light text-dark/80 mb-4"
+                    style={{ letterSpacing: "0.02em" }}
+                  >
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p
+                    className="text-base md:text-lg text-gray-600 leading-relaxed"
+                    style={{ letterSpacing: "0.01em" }}
+                  >
                     {service.description}
                   </p>
                 </motion.div>

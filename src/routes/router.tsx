@@ -1,22 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
-import { MainLayout } from "../components/layout/MainLayout";
+import { AppLayout } from "../components/layout/AppLayout";
 import { LandingPage } from "./pages/LandingPage";
 import { HioxxViewPage } from "./pages/HioxxViewPage";
-import { AppRoutes } from "../common/enums";
 
 export const router = createBrowserRouter([
   {
-    path: AppRoutes.HOME,
-    element: <MainLayout />,
+    path: "/",
+    element: <AppLayout />,
     children: [
       {
         index: true,
         element: <LandingPage />,
       },
+      {
+        path: "hioxx",
+        element: <HioxxViewPage />,
+      },
     ],
-  },
-  {
-    path: AppRoutes.HIOXX,
-    element: <HioxxViewPage />,
   },
 ]);

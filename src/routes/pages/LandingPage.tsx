@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   HeroSection,
   AboutSection,
@@ -8,12 +7,7 @@ import {
 
 export function LandingPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white"
-    >
+    <div className="min-h-screen bg-white">
       <HeroSection
         description="Advancing quantum computing research and innovation for a better tomorrow"
       />
@@ -26,6 +20,6 @@ export function LandingPage() {
       />
       <ServicesSection />
       <ContactSection />
-    </motion.div>
+    </div>
   );
 }

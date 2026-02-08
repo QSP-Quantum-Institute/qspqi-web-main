@@ -4,7 +4,6 @@ import type { SectionProps } from "../../common/types/sections";
 interface AboutSectionProps extends SectionProps {
   title?: string;
   content?: string[];
-  imageUrl?: string;
 }
 
 export function AboutSection({
@@ -15,61 +14,43 @@ export function AboutSection({
     "We are at the forefront of quantum computing research and innovation.",
     "Our mission is to advance the field of quantum science and make it accessible to everyone.",
   ],
-  imageUrl,
 }: AboutSectionProps) {
   return (
-    <section id={id} className={`py-20 bg-white ${className}`}>
+    <section id={id} className={`py-32 bg-white ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
+            <h2
+              className="text-4xl md:text-6xl font-light text-dark/80 mb-6"
+              style={{
+                fontFamily: "Inter, Poppins, sans-serif",
+                letterSpacing: "0.05em",
+              }}
+            >
               {title}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-gold to-gold-300 mx-auto"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              {content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-lg text-gray-700 mb-4 leading-relaxed"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative"
-            >
-              {imageUrl ? (
-                <img
-                  src={imageUrl}
-                  alt="About us"
-                  className="rounded-lg shadow-xl w-full h-auto"
-                />
-              ) : (
-                <div className="w-full h-64 bg-gradient-to-br from-gold-50 to-gold-100 rounded-lg shadow-xl flex items-center justify-center">
-                  <span className="text-gold-300 text-6xl">QSP</span>
-                </div>
-              )}
-            </motion.div>
+          <div className="space-y-8">
+            {content.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-xl md:text-2xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto"
+                style={{ letterSpacing: "0.01em" }}
+              >
+                {paragraph}
+              </motion.p>
+            ))}
           </div>
         </div>
       </div>
