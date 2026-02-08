@@ -3,6 +3,7 @@ export const AppRoutes = {
   ABOUT: "/about",
   SERVICES: "/services",
   CONTACT: "/contact",
+  HIOXX: "/hioxx",
 } as const;
 
 export type AppRoute = (typeof AppRoutes)[keyof typeof AppRoutes];

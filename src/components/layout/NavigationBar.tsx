@@ -11,6 +11,7 @@ interface NavItem {
 
 const navigationItems: NavItem[] = [
   { path: AppRoutes.HOME, label: "Home" },
+  { path: AppRoutes.HIOXX, label: "HIOXX" },
   { path: "#about", label: "About", isAnchor: true },
   { path: "#services", label: "Services", isAnchor: true },
   { path: "#contact", label: "Contact", isAnchor: true },
